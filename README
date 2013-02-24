@@ -1,0 +1,30 @@
+Bro module for the Symantec Comment Crew Report
+
+This module detects domain lookups for domains outlined in the Symantec Comment Crew report. A copy of that report can be found here:
+
+http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/comment_crew_indicators_of_compromise.pdf
+
+
+Installation
+
+cd <bro_dir>/share/bro/site/
+git clone git://github.com/kevinwilcox/bro-sccrew.git sccrew
+echo "@load sccrew" | sudo tee -a local.bro
+sudo broctl check
+sudo broctl update
+sudo broctl restart
+
+
+Notices
+
+This module will generate alerts of the type SCCREW::Domain_Hit
+
+
+Attribution
+
+This module is a near clone of the APT1 module by Seth Hall but uses the data from the Symantec report instead of Mandiant's IOCs.
+
+Seth's module can be found here:
+
+http://github.com/sethhall/bro-apt1
+
